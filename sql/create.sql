@@ -20,7 +20,7 @@ CREATE TABLE burgers (
     PRIMARY KEY,
 
   name
-    VARCHAR(30)
+    VARCHAR(120)
     NOT NULL,
 
   eaten

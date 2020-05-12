@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+
+    <style type="text/css">
+      label.col, label.col-form-label { justify-content: left; }
+    </style>
+
     <title>Eat-Da-Burger</title>
   </head>
 
@@ -18,19 +23,20 @@
       </div>
     </header>
 
-    <div class="container">
+    <div class="container mt-3">
 
       <div class="row">
-        <div class="col12">
-          <form action="/" method="POST">
-          	<input type="text" name="burger" placeholder="What kind of burger would you like to eat?" />
-            <button type="submit">Submit</button>
+        <div class="col-12">
+          <form action="/" method="POST" class="form-inline">
+            <div class="form-group w-100">
+              <label for="burger" class="sr-only">Burger name</label>
+            	<input class="form-control w-100" type="text" name="burger" autocomplete="off" placeholder="What kind of burger would you like to eat?" />
+            </div>
           </form>
         </div>
       </div>
 
-
-      <div class="row">
+      <div class="row mt-3">
         {{{ body }}}
       </div>
     </div>

@@ -42,14 +42,18 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
   const burger = req.body.burger
 
-  burgers.add(burger).then((result, error) => {
-    if (error) {
-      throw new Error(error)
-    }
+  if (!burger.trim()) {
     res.redirect("/")
-  }).catch((error) => {
-    console.log(error)
-  })
+  } else {
+    burgers.add(burger).then((result, error) => {
+      if (error) {
+        throw new Error(error)
+      }
+      res.redirect("/")
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
 })
 
 app.post("/devour", function(req, res) {
