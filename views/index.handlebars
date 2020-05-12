@@ -1,0 +1,23 @@
+
+
+<ul>
+  {{#each eaten}}
+  	<li>
+  	   <p>ID: {{id}}</p>
+       <p>Task: {{name}}</p>
+  	</li>
+  {{/each}}
+</ul>
+
+<ul id="uneaten">
+  {{#each uneaten}}
+  	<li data-value="{{id}}">
+  	   <p>ID: {{id}}</p>
+       <p>Task: {{name}}</p>
+	<button class="devour" value="{{id}}" formaction="/devour" formmethod="POST" type="submit">Devour It</button>
+
+  	</li>
+  {{/each}}
+</ul>
+
+
