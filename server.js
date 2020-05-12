@@ -19,6 +19,9 @@ app.engine("handlebars", handlebars({ defaultLayout: "main" }))
 app.set("view engine", "handlebars")
 
 
+/*
+  Show the lists of burgers on the main page.
+ */
 app.get("/", function(req, res) {
   burgers.getAll().then((result, error) => {
     const
@@ -39,6 +42,9 @@ app.get("/", function(req, res) {
 })
 
 
+/*
+  Add a burger to the database. Empty values will be ignored.
+ */
 app.post("/", function(req, res) {
   const burger = req.body.burger
 
@@ -56,9 +62,13 @@ app.post("/", function(req, res) {
   }
 })
 
+
+/*
+  Mark a burger as having been eaten.
+ */
 app.post("/devour", function(req, res) {
   const { burgerId } = req.body
-console.log(burgerId)
+
   burgers.devour(burgerId).then((result, error) => {
     if (error) {
       throw new Error(error)
