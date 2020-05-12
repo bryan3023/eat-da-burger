@@ -1,7 +1,7 @@
 --
 --  Create Eat-Da-Burger localhost account
 --
---  Create an account for working with the database locally..
+--  Create an account for working with the database locally.
 --
 
 
