@@ -5,7 +5,12 @@
 #
 
 function run_myssql_script() {
-    /usr/local/mysql/bin/mysql -s -u root --password=$2 < $1 > /dev/null
+    if [ -f $1 ]
+    then
+        /usr/local/mysql/bin/mysql -s -u root --password=$2 < $1 > /dev/null
+    else
+        echo "Files '$1' not found. Skipping."
+    fi
 }
 
 read -s -p "MySQL local instance root password:" password
