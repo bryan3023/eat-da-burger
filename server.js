@@ -27,8 +27,8 @@ app.get("/", function(req, res) {
   burgers.getAll()
     .then((result, error) => {
       const
-        eaten = result.filter(b => b.eaten),
-        uneaten = result.filter(b => !b.eaten)
+        eaten = result.filter(b => b.devoured),
+        uneaten = result.filter(b => !b.devoured)
 
       if (error) throw new Error(error)
     

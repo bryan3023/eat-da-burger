@@ -19,11 +19,11 @@ CREATE TABLE burgers (
     AUTO_INCREMENT
     PRIMARY KEY,
 
-  name
+  burger_name
     VARCHAR(120)
     NOT NULL,
 
-  eaten
+  devoured
     BOOLEAN
     DEFAULT FALSE
 );

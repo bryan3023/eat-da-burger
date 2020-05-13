@@ -16,6 +16,6 @@ function run_myssql_script() {
 read -s -p "MySQL local instance root password:" password
 echo
 
-run_myssql_script ./sql/create.sql $password
-run_myssql_script ./sql/localhost.sql $password
-run_myssql_script ./sql/seed.sql $password
+run_myssql_script ./db/schema.sql $password
+run_myssql_script ./db/localhost.sql $password
+run_myssql_script ./db/seed.sql $password

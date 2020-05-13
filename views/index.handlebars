@@ -3,7 +3,7 @@
   <h3>Burgers to Eat</h3>
     {{#each uneaten}}
       <div class="form-group form-inline">
-    	  <label class="col col-form-label text-left">{{name}}</label>
+    	  <label class="col col-form-label text-left">{{burger_name}}</label>
         <button
           class="btn btn-primary devour text-right"
           value="{{id}}"
@@ -17,7 +17,7 @@
   <h3>Burgers I've Eaten</h3>
     {{#each eaten}}
       <div class="form-group form-inline">
-    	  <label class="col col-form-label">{{name}}</label>
+    	  <label class="col col-form-label">{{burger_name}}</label>
       </div>
     {{/each}}
   </ul>
