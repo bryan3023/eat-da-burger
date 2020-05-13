@@ -1,0 +1,8 @@
+label.col, label.col-form-label {
+    justify-content: left;
+}
+
+img {
+    width: 250px;
+    height: auto;
+}

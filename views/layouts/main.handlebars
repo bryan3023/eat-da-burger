@@ -6,11 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-
-    <style type="text/css">
-      label.col, label.col-form-label { justify-content: left; }
-    </style>
-
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Eat-Da-Burger</title>
   </head>
 
@@ -35,9 +31,10 @@
       <div class="row">
         <div class="col-12">
           <form action="/" method="POST" class="form-inline">
-            <div class="form-group w-100">
-              <label for="burger" class="sr-only">Burger name</label>
-            	<input class="form-control w-100" type="text" name="burger" autocomplete="off" placeholder="What kind of burger would you like to eat?" />
+            <div class="form-group w-100 d-flex-row" style="justify-content: center;">
+              <label for="burger" class="sr-only">Name a burger you want to eat: </label>
+            	<input class="form-control w-100 mr-3 mb-3" type="text" name="burger" autocomplete="off" placeholder="What kind of burger would you like to eat?" />
+              <button class="btn btn-primary text-right" type="submit">Add</button>
             </div>
           </form>
         </div>
@@ -49,6 +46,15 @@
       <div class="row mt-3">
         {{{ body }}}
       </div>
+
+      <!--
+        Footer image
+      -->
+      <div class="row mt-5">
+        <div class="col-12 d-flex justify-content-center">
+          <img src="./assets/images/burger.png" />
+        </div>
+      </div>
     </div>
 
   	<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
@@ -56,17 +62,15 @@
 
     <script>
       $(".devour").on("click", () => {
-        if (event.target.matches("button")) {
-          const answer = event.target.value;
+        const burgerId = event.target.value;
 
-          $.ajax({
-            url: "/devour",
-            method: "post",
-            data: {burgerId: answer}
-          }).then(() => {
-            location.reload()
-          })
-        }
+        $.ajax({
+          url: "/devour",
+          method: "post",
+          data: { burgerId: burgerId }
+        }).then(() => {
+          location.reload()
+        })
       })
     </script>
 
