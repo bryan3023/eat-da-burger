@@ -66,7 +66,7 @@ class SimpleOrm {
 
 
   /*
-    Ensure truncate text of it's beyond the allowed length.
+    Truncate text of it's beyond the allowed length.
    */
   getSantizedVarchar(text, length) {
     return text.length <= length ?
