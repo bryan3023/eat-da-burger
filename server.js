@@ -15,13 +15,9 @@ app.engine("handlebars", handlebars({ defaultLayout: "main" }))
 app.set("view engine", "handlebars")
 
 
-require("./controller/burger_controller")(app)
+require("./controllers/burger_controller")(app)
 
 
 app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT)
 })
-
-
-// --- Utility function ---
-

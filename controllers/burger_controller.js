@@ -1,6 +1,6 @@
 const
-  database = new (require("../lib/BurgerDatabase"))(),
-  burgers = new (require("../lib/BurgerModel"))(database)
+  database = new (require("../config/simple_orm"))(),
+  burgers = new (require("../models/burger_model"))(database)
 
 
 /*
