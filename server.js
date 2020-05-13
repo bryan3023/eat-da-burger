@@ -1,11 +1,6 @@
 const
   express = require("express"),
-  handlebars = require("express-handlebars"),
-  mysql = require("mysql")
-
-const
-  database = new (require("./lib/BurgerDatabase"))(),
-  burgers = new (require("./lib/BurgerModel"))(database)
+  handlebars = require("express-handlebars")
 
 const
   app = express(),
@@ -20,59 +15,7 @@ app.engine("handlebars", handlebars({ defaultLayout: "main" }))
 app.set("view engine", "handlebars")
 
 
-/*
-  Show the lists of burgers on the main page.
- */
-app.get("/", function(req, res) {
-  burgers.getAll()
-    .then((result, error) => {
-      const
-        eaten = result.filter(b => b.devoured),
-        uneaten = result.filter(b => !b.devoured)
-
-      if (error) throw new Error(error)
-    
-      res.render("index", {
-        eaten: eaten,
-        uneaten: uneaten
-      })
-    })
-    .catch(logError)
-})
-
-
-/*
-  Add a burger to the database. Empty values will be ignored.
- */
-app.post("/", function(req, res) {
-  const burger = req.body.burger
-
-  if (!burger.trim()) {
-    res.redirect("/")
-  } else {
-    burgers.add(burger)
-      .then((result, error) => {
-        if (error) throw new Error(error)
-        res.redirect("/")
-      })
-      .catch(logError)
-  }
-})
-
-
-/*
-  Consume a burger.
- */
-app.post("/devour", function(req, res) {
-  const { burgerId } = req.body
-
-  burgers.devour(burgerId)
-    .then((result, error) => {
-      if (error) throw new Error(error)
-      res.redirect("/")
-    })
-    .catch(logError)
-})
+require("./controller/burger_controller")(app)
 
 
 app.listen(PORT, function() {
@@ -82,9 +25,3 @@ app.listen(PORT, function() {
 
 // --- Utility function ---
 
-/*
-  Log any errors to the console.
- */
-function logError(error) {
-  console.error(error)
-}
