@@ -56,7 +56,7 @@ Once installed, begin the program by typing:
 npm run start
 ```
 
-Then open the webiste by navigating to `http://localhost:8080` in your web browser.
+Then open the website by navigating to `http://localhost:8080` in your web browser.
 
 ## Testing
 
