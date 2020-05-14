@@ -4,11 +4,6 @@
 --  Create database for running the application.
 --
 
-DROP DATABASE IF EXISTS eat_da_burger_DB;
-CREATE DATABASE eat_da_burger_DB;
-
-USE eat_da_burger_DB;
-
 
 -- Create tables --
 

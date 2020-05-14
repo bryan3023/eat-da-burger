@@ -4,8 +4,6 @@
 --  Pre-populate the database with values.
 --
 
-USE eat_da_burger_DB;
-
 
 -- Populate burgers --
 

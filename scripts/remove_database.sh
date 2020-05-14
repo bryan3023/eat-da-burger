@@ -16,4 +16,4 @@ function run_myssql_script() {
 read -s -p "MySQL local instance root password:" password
 echo
 
-run_myssql_script ./sql/remove.sql $password
+run_myssql_script ./db/remove.sql $password

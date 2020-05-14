@@ -1,8 +1,13 @@
 --
---  Create Eat-Da-Burger localhost account
+--  Create Eat-Da-Burger local artifacts
 --
---  Create an account for working with the database locally.
+--  Create a database and account for working with the database locally.
 --
+
+
+
+DROP DATABASE IF EXISTS eat_da_burger_DB;
+CREATE DATABASE eat_da_burger_DB;
 
 
 DROP USER IF EXISTS 'bryan3023.eat_da_burger'@'localhost';
