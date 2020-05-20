@@ -30,13 +30,18 @@
       -->
       <div class="row">
         <div class="col-12">
-          <form action="/" method="POST" class="form-inline">
-            <div class="form-group w-100 d-flex-row" style="justify-content: center;">
-              <label for="burger" class="sr-only">Name a burger you want to eat: </label>
-            	<input class="form-control w-100 mr-3 mb-3" type="text" name="burger" autocomplete="off" placeholder="What kind of burger would you like to eat?" />
-              <button class="btn btn-primary text-right" type="submit">Add</button>
-            </div>
-          </form>
+          <div class="form-group w-100" style="justify-content: center;">
+            <form action="/" method="POST" class="form-inline">
+                            <label for="burger" class="sr-only">Name a burger you want to eat: </label>
+
+              <div class="input-group w-100 mb-3">
+                <input class="form-control" type="text" name="burger" autocomplete="off" placeholder="What kind of burger would you like to eat?" />
+                <div class="input-group-append">
+                  <button class="btn btn-primary text-right" type="submit">Add</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 

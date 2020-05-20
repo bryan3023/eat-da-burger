@@ -9,10 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "create-db-mac": "chmod +x ./scripts/create_database.sh ; ./scripts/create_database.sh eat_da_burger_DB",
-    "remove-db-mac": "chmod +x ./scripts/remove_database.sh ; ./scripts/remove_database.sh",
-    "create-db-win": ".\\scripts\\invoke_script.cmd .\\scripts\\Create-Database.ps1 eat_da_burger_DB",
-    "remove-db-win": ".\\scripts\\invoke_script.cmd .\\scripts\\Remove-Database.ps1"
+    "create-db": "node scripts/create_database.js",
+    "remove-db": "node scripts/remove_database.js"
   },
   "repository": {
     "type": "git",
@@ -29,5 +27,8 @@
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "inquirer": "^7.1.0"
   }
 }

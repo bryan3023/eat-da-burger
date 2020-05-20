@@ -22,31 +22,21 @@ npm install
 
 Next, you need to setup the database. You'll need a local MySQL instance for which you have the root password.
 
-If you're on a Mac, you can run:
+On either Windows or Mac, run:
 
 ```
-npm run create-db-mac
+npm run create-db
 ```
 
-On Windows, type:
+This will create and populate the database, and also configure a local MySQL account with limited rights to only this database.
+
+Once you're done with the program, you can cleanly remove the database with:
 
 ```
-npm run create-db-win
+npm run remove-db
 ```
 
-Both of these scripts will create and populate the database, and also configure a local MySQL account with limited rights to only this database. Both scripts will prompt you for the root password, but this will not be saved or displayed in ay way.
-
-Once you're done with the program, you can cleanly remove it. On the Mac, type:
-
-```
-npm run remove-db-mac
-```
-
-On Windows, type:
-
-```
-npm run remove-db-win
-```
+> **WARNING:** On Windows, when running the `create-db` and `remove-db` scripts from within Git Bash, **your MySQL root password will not be masked**. It works as expected when running from within `cmd.exe` or `powershell.exe`, and I would recommend you use one of those.
 
 ## Usage
 
